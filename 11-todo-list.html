@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="11-todo-list.css">
+    <title>Xiao Yan</title>
+    <!-- <link src="icon" type="image/png" href="game-images/to-do-list.png"> -->
+</head>
+<body>
+    <h1> Todo List </h1>
+  <div class="js-input-grid">
+
+      <input class="js-name-input name-input" type="text"
+        placeholder="Todo name...">
+
+      <input type="date" class="js-due-date-input due-date-input"
+        placeholder="due-date">
+
+      <button onclick="
+        addTodo()
+      " class="add-todo-button" >Add</button>
+  </div>
+    <div class="js-todo-list todo-grid"></div>
+    <script src="11-todo-list.js"></script>
+</body>
+</html>
