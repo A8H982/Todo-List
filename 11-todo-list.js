@@ -29,6 +29,9 @@ function renderTodoList () {
     .innerHTML = todoListHTML;
 }
 function addTodo() {
+
+  // Add the function for the users to save their notes to the cookie to save in the local storage.
+  // The non disposable notes/Todos to fetch when needed.
     const inputElement = document.querySelector('.js-name-input');
     const name = inputElement.value;
 
