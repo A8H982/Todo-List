@@ -28,20 +28,21 @@ function renderTodoList () {
     document.querySelector('.js-todo-list')
     .innerHTML = todoListHTML;
 }
+
 function addTodo() {
     const inputElement = document.querySelector('.js-name-input');
     const name = inputElement.value;
 
     const dateInputElement = document.querySelector('.js-due-date-input');
     const dueDate = dateInputElement.value;
-
-    todoList.push({
-      // name: name,
-      // dueDate: dueDate
-      name,                   // Shorthand property syntax
-      dueDate
-    });
-
+    
+        todoList.push({
+          // name: name,
+          // dueDate: dueDate
+          name,                   // Shorthand property syntax
+          dueDate
+        });
+     
     inputElement.value = '';
     dateInputElement.value = '';
     renderTodoList();
