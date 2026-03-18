@@ -18,7 +18,7 @@ h1 {
    border-radius: 20px;
   padding: 5px;
   cursor: pointer;
-  background-color:rgb(224, 0, 0);
+  background-color:rgb(255, 0, 0);
   border-color:rgb(255, 255, 255);
   color: rgb(255, 255, 255);
   font-family:cursive;
@@ -33,15 +33,18 @@ body {
   background-color: #8deaff;
 }
 
-.todo-grid,
-.js-input-grid {
+.todo-grid {
   display: grid;
-  grid-template-columns: 200px 150px 100px;
+  grid-template-columns: 48px 200px 150px 100px;
   align-items: center;
 }
 
 .js-input-grid {
+  display: grid;
+  grid-template-columns: 245px 150px 100px;
+  align-items: center;
   margin-bottom: 8px;
+  margin-right: 10px;
   align-items: stretch;
 }
 
@@ -58,5 +61,29 @@ body {
   border-radius: 20px;
   cursor: pointer;
   margin-right: 5px;
-  margin-left: 5px;
+  margin-left: 10px;
+}
+
+/* Helped */
+
+  /* When the checkbox is checked, target the label directly after it */
+  #custom-checkbox:checked + label {
+      text-decoration: line-through; /* Adds the strike-through line */
+      color: #888;                  /* Dims the text color */
+      opacity: 0.6;                 /* Optional: makes it look even more faded */
+  }
+
+/* Checkbox styling for todo items */
+.todo-checkbox {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  accent-color: rgb(6, 127, 60);
+}
+
+/* Completed todo styling */
+.todo-name.completed {
+  text-decoration: line-through;
+  color: #888;
+  opacity: 0.6;
 }

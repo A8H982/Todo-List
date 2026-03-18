@@ -1,9 +1,11 @@
 const todoList = [{
   name: 'Welcome',
-  dueDate: '2026-01-14'
+  dueDate: '2026-01-14',
+  completed: false
 }, {
   name: 'Add your tasks here!', 
-  dueDate: '2026-01-14'}];
+  dueDate: '2026-01-14',
+  completed: false}];
 
 renderTodoList();
 
@@ -12,11 +14,14 @@ function renderTodoList () {
 
   for(let i = 0; i < todoList.length; i++) {
       const todoObject = todoList[i];
-      // const name = todoObject.name;      // These both const are same as line:17
-      // const dueDate = todoObject.dueDate;    
-      const {name, dueDate} = todoObject;       // Destructuring
+      const {name, dueDate, completed} = todoObject;       // Destructuring
+      const completedClass = completed ? 'completed' : '';
       const html = ` 
-        <div>${name}</div>
+        <input type="checkbox" class="todo-checkbox" onchange="
+          todoList[${i}].completed = this.checked;
+          renderTodoList();
+        " ${completed ? 'checked' : ''}>
+        <div class="todo-name ${completedClass}">${name}</div>
         <div>${dueDate}</div>                   
         <button onclick="
           todoList.splice(${i}, 1);
@@ -43,10 +48,9 @@ function addTodo() {
 
     } else {
       todoList.push({
-          // name: name,
-          // dueDate: dueDate
           name,                   // Shorthand property syntax
-          dueDate
+          dueDate,
+          completed: false
         });
     }
         
